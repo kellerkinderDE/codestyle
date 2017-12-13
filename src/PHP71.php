@@ -32,6 +32,11 @@ final class PHP71 extends Config
             'ordered_imports'            => true,
             'phpdoc_order'               => true,
             'ternary_to_null_coalescing' => true,
+            'visibility_required'        => [
+                'const',
+                'property',
+                'method',
+            ],
             'phpdoc_summary'             => false,
             'phpdoc_to_comment'          => false,
             'yoda_style'                 => false,
