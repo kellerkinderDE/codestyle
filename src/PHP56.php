@@ -5,16 +5,16 @@ namespace Kellerkinder\Codestyles;
 use PhpCsFixer\Config;
 
 /**
- * Class PHP70
+ * Class PHP56
  */
-final class PHP70 extends Config
+final class PHP56 extends Config
 {
     /**
-     * PHP70 constructor.
+     * PHP56 constructor.
      */
     public function __construct()
     {
-        parent::__construct('Kellerkinder PHP 7.0 config');
+        parent::__construct('Kellerkinder PHP 5.6 config');
     }
 
     /**

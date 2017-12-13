@@ -14,7 +14,7 @@ final class PHP72 extends Config
      */
     public function __construct()
     {
-        parent::__construct('Kellerkinder PHP72 config');
+        parent::__construct('Kellerkinder PHP 7.2 config');
     }
 
     /**
