@@ -3,6 +3,6 @@
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__);
 
-return Kellerkinder\Codestyles\Shopware52::create()
+return Kellerkinder\Codestyles\PHP70::create()
     ->setUsingCache(true)
     ->setFinder($finder);

@@ -5,16 +5,16 @@ namespace Kellerkinder\Codestyles;
 use PhpCsFixer\Config;
 
 /**
- * Class shopware52
+ * Class PHP70
  */
-final class Shopware52 extends Config
+final class PHP70 extends Config
 {
     /**
-     * shopware52 constructor.
+     * PHP70 constructor.
      */
     public function __construct()
     {
-        parent::__construct('Kellerkinder Shopware 5.2 config');
+        parent::__construct('Kellerkinder PHP70 config');
     }
 
     /**
