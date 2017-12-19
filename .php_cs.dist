@@ -1,0 +1,8 @@
+<?php
+
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__);
+
+return Kellerkinder\Codestyles\PHP71::create()
+    ->setUsingCache(true)
+    ->setFinder($finder);

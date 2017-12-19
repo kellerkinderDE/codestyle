@@ -1,0 +1,19 @@
+{
+    "name": "kellerkinder/codestyle",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kellerkinder / k10r GmbH",
+            "email": "anfragen@kellerkinder.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Kellerkinder\\Codestyles\\": "src"
+        }
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.9"
+    }
+}
