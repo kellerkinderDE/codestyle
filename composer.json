@@ -1,5 +1,8 @@
 {
     "name": "k10r/codestyle",
+    "replace": {
+        "kellerkinder/codestyle": "*"
+    },
     "description": "Our codestyle definitions for different PHP versions.",
     "type": "library",
     "license": "MIT",
