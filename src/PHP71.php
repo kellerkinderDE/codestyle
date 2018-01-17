@@ -1,6 +1,6 @@
 <?php
 
-namespace Kellerkinder\Codestyles;
+namespace K10r\Codestyles;
 
 use PhpCsFixer\Config;
 
