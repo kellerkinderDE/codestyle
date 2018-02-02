@@ -1,6 +1,6 @@
 <?php
 
-namespace K10r\Codestyles;
+namespace K10r\Codestyle;
 
 use PhpCsFixer\Config;
 
