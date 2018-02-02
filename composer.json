@@ -1,5 +1,6 @@
 {
-    "name": "kellerkinder/codestyle",
+    "name": "k10r/codestyle",
+    "description": "Our codestyle definitions for different PHP versions.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -10,7 +11,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Kellerkinder\\Codestyles\\": "src"
+            "K10r\\Codestyle\\": "src"
         }
     },
     "require-dev": {
