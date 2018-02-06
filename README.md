@@ -12,4 +12,4 @@ After that, decide which configuration you want to use, currenty the following c
 
 Add a `.php_cs.dist` to the root folder of your project with the required chosen configuration applied. A good example can be found in this project root folder.
 
-Finally add `.php_cs.cache`  to project specific .gitignore file.
+Finally add `.php_cs.cache`  to project specific .gitignore file  and run php-cs-fixer with the following commamnd: `vendor/bin/php-cs-fixer fix -vvv`
