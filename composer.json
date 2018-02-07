@@ -1,6 +1,6 @@
 {
     "name": "k10r/codestyle",
-    "description": "Our codestyle definitions for different PHP versions.",
+    "description": "Kellerkinder codestyle definitions for different PHP versions.",
     "type": "library",
     "license": "MIT",
     "authors": [
@@ -14,7 +14,7 @@
             "K10r\\Codestyle\\": "src"
         }
     },
-    "require-dev": {
+    "require": {
         "friendsofphp/php-cs-fixer": "^2.9"
     }
 }
