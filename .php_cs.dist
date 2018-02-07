@@ -1,8 +1,10 @@
 <?php
 
+require 'vendor/autoload.php';
+
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__);
 
-return Kellerkinder\Codestyles\PHP71::create()
+return K10r\Codestyle\PHP71::create()
     ->setUsingCache(true)
     ->setFinder($finder);
