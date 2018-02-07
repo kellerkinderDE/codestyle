@@ -1,5 +1,7 @@
 <?php
 
+require 'vendor/autoload.php';
+
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__);
 
