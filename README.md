@@ -2,7 +2,7 @@
 
 First require the package via composer
 
-`composer require --dev k10r/codestyle `
+`composer require --dev k10r/codestyle`
 
 After that, decide which configuration you want to use, currenty the following configurations are supported:
 - PHP 5.6
