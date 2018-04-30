@@ -15,6 +15,7 @@
         }
     },
     "bin": [
-        "php-cs-fixer.phar"
+        "php-cs-fixer.phar",
+        "php-cs-fixer"
     ]
 }
