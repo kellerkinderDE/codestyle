@@ -14,7 +14,7 @@
             "K10r\\Codestyle\\": "src"
         }
     },
-    "require": {
-        "friendsofphp/php-cs-fixer": "^2.9"
-    }
+    "bin": [
+        "php-cs-fixer.phar"
+    ]
 }
