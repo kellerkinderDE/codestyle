@@ -18,7 +18,7 @@ final class MultiToSingleLineAnnotationFixer extends AbstractFixer
     public function getDefinition()
     {
         return new FixerDefinition(
-            'Multiline @var and @param anotations with only one property are collapsed to single line annotations',
+            'Multiline @var and @param annotations with only one property are collapsed to single line annotations',
             [
                 new CodeSample(
                     <<<'EOT'

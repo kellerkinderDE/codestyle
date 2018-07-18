@@ -8,17 +8,17 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
-final class UnnecessaryCommentFixer extends AbstractFixer
+final class AutomaticCommentsFixer extends AbstractFixer
 {
     public function getName()
     {
-        return 'Kellerkinder/automatic_constructor';
+        return 'Kellerkinder/automatic_comments';
     }
 
     public function getDefinition()
     {
         return new FixerDefinition(
-            'Removes the automatic "ClassName constructor." and "Class ClassName" phpdoc.',
+            'Removes the automatic "ClassName constructor." and "Class ClassName" comments.',
             [
                 new CodeSample(
                     <<<'EOT'

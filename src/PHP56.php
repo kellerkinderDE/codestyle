@@ -2,8 +2,8 @@
 
 namespace K10r\Codestyle;
 
+use K10r\Codestyle\Fixers\Comment\AutomaticCommentsFixer;
 use K10r\Codestyle\Fixers\Comment\MultiToSingleLineAnnotationFixer;
-use K10r\Codestyle\Fixers\Comment\UnnecessaryCommentFixer;
 use PhpCsFixer\Config;
 
 final class PHP56 extends Config
@@ -18,7 +18,7 @@ final class PHP56 extends Config
         $factory = parent::create();
 
         $factory->registerCustomFixers([
-            new UnnecessaryCommentFixer(),
+            new AutomaticCommentsFixer(),
             new MultiToSingleLineAnnotationFixer(),
         ]);
 
@@ -40,11 +40,10 @@ final class PHP56 extends Config
             'ordered_imports'                           => true,
             'phpdoc_order'                              => true,
             'Kellerkinder/single_line_annotation'       => true,
-            'Kellerkinder/automatic_constructor'        => true,
+            'Kellerkinder/automatic_comments'           => true,
             'phpdoc_summary'                            => false,
             'phpdoc_types_order'                        => true,
             'return_assignment'                         => true,
-            'no_superfluous_phpdoc_tags'                => true,
             'phpdoc_align'                              => true,
             'phpdoc_to_comment'                         => false,
             'yoda_style'                                => false,
