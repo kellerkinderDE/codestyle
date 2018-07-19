@@ -18,7 +18,7 @@ final class MultiToSingleLineAnnotationFixer extends AbstractFixer
     public function getDefinition()
     {
         return new FixerDefinition(
-            'Multiline @var and @param annotations with only one property are collapsed to single line annotations',
+            'Multiline @var annotations with only one annotation are collapsed to single line annotations',
             [
                 new CodeSample(
                     <<<'EOT'
@@ -69,15 +69,13 @@ EOT
                 continue;
             }
 
-            $this->collapseComment('param', $token);
             $this->collapseComment('var', $token);
         }
     }
 
     private function isPossibleComment(Token $token)
     {
-        return stripos($token->getContent(), '@var') !== false ||
-            stripos($token->getContent(), '@param') !== false;
+        return stripos($token->getContent(), '@var') !== false;
     }
 
     private function collapseComment($type, Token $token)
