@@ -2,19 +2,27 @@
 
 namespace K10r\Codestyle;
 
+use K10r\Codestyle\Fixers\Comment\AutomaticCommentsFixer;
+use K10r\Codestyle\Fixers\Comment\MultiToSingleLineAnnotationFixer;
 use PhpCsFixer\Config;
 
-/**
- * Class PHP71
- */
 final class PHP71 extends Config
 {
-    /**
-     * PHP71 constructor.
-     */
     public function __construct()
     {
         parent::__construct('Kellerkinder PHP 7.1 config');
+    }
+
+    public static function create()
+    {
+        $factory = parent::create();
+
+        $factory->registerCustomFixers([
+            new AutomaticCommentsFixer(),
+            new MultiToSingleLineAnnotationFixer(),
+        ]);
+
+        return $factory;
     }
 
     /**
@@ -31,9 +39,14 @@ final class PHP71 extends Config
             'ordered_class_elements'                    => true,
             'ordered_imports'                           => true,
             'phpdoc_order'                              => true,
+            'Kellerkinder/single_line_annotation'       => true,
+            'Kellerkinder/automatic_comments'           => true,
             'ternary_to_null_coalescing'                => true,
             'phpdoc_summary'                            => false,
             'phpdoc_to_comment'                         => false,
+            'phpdoc_types_order'                        => true,
+            'return_assignment'                         => true,
+            'phpdoc_align'                              => true,
             'yoda_style'                                => false,
             'phpdoc_var_without_name'                   => false,
             'no_multiline_whitespace_before_semicolons' => true,
