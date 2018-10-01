@@ -70,21 +70,36 @@ EOT
                 continue;
             }
 
-            if (preg_match('/\/(.*)\*\*\n(.*)\*.*constructor\.\n(.*)\*\//', $token->getContent())) {
-                $token->setContent('');
-                $tokens->removeLeadingWhitespace($index);
-            }
+            $token->setContent(
+                preg_replace(
+                    '/\*\ (.*)\*.*constructor\./',
+                    '',
+                    $token->getContent()
+                )
+            );
 
-            if (preg_match('/\/(.*)\*\*\n(.*)\*\ Class\ (.*)\n(.*)\*\//', $token->getContent())) {
-                $token->setContent('');
-                $tokens->removeLeadingWhitespace($index);
-            }
+            $token->setContent(
+                preg_replace(
+                    '/\*\ Class\ (.*)/',
+                    '',
+                    $token->getContent()
+                )
+            );
+
+            $token->setContent(
+                preg_replace(
+                    '/\*\ Interface\ (.*)/',
+                    '',
+                    $token->getContent()
+                )
+            );
         }
     }
 
     private function isPossibleComment(Token $token)
     {
         return stripos($token->getContent(), 'constructor.') !== false ||
+            stripos($token->getContent(), ' Interface ') !== false ||
             stripos($token->getContent(), ' Class ') !== false;
     }
 }
