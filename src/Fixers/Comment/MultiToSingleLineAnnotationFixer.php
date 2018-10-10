@@ -69,15 +69,13 @@ EOT
                 continue;
             }
 
-            $this->collapseComment('param', $token);
             $this->collapseComment('var', $token);
         }
     }
 
     private function isPossibleComment(Token $token)
     {
-        return stripos($token->getContent(), '@var') !== false ||
-            stripos($token->getContent(), '@param') !== false;
+        return stripos($token->getContent(), '@var') !== false;
     }
 
     private function collapseComment($type, Token $token)
