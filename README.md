@@ -9,6 +9,7 @@ After that, decide which configuration you want to use, currenty the following c
 - PHP 7.0
 - PHP 7.1
 - PHP 7.2
+- PHP 7.3
 
 Add a `.php_cs.dist` to the root folder of your project with the required chosen configuration applied. A good example can be found in this project root folder.
 
