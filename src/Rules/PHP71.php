@@ -10,9 +10,10 @@ final class PHP71 extends DefaultRules
     public static function getRules()
     {
         return array_merge(
-            self::RULES,
+            PHP70::getRules(),
             [
                 'ternary_to_null_coalescing' => true,
+                'void_return'                => true,
                 'visibility_required'        => [
                     'const',
                     'property',

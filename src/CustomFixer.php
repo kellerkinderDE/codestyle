@@ -2,11 +2,17 @@
 
 namespace K10rFixer;
 
+use Generator;
+use IteratorAggregate;
 use PhpCsFixer\Finder;
+use Symfony\Component\Finder\SplFileInfo;
 
-final class CustomFixer implements \IteratorAggregate
+final class CustomFixer implements IteratorAggregate
 {
-    public function getIterator(): \Generator
+    /**
+     * @return Generator
+     */
+    public function getIterator()
     {
         $finder = Finder::create()
             ->files()
@@ -15,9 +21,10 @@ final class CustomFixer implements \IteratorAggregate
             ->notName('DeprecatingFixerInterface.php')
             ->sortByName();
         $classes = [];
+        /** @var SplFileInfo $fileInfo */
         foreach ($finder as $fileInfo) {
             $className = __NAMESPACE__ . '\\Fixer\\' . $fileInfo->getBasename('.php');
-            array_push($classes, $className);
+            $classes[] = $className;
             yield new $className();
         }
 

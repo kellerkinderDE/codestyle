@@ -2,9 +2,12 @@
 
 namespace K10rFixer\Rules;
 
+use PhpCsFixer\Config;
+use PhpCsFixer\Finder;
+
 abstract class DefaultRules
 {
-    public const RULES = [
+    const RULES = [
         '@PSR2'                                     => true,
         '@Symfony'                                  => true,
         '@DoctrineAnnotation'                       => true,
@@ -23,6 +26,8 @@ abstract class DefaultRules
         'yoda_style'                                => false,
         'phpdoc_var_without_name'                   => false,
         'no_multiline_whitespace_before_semicolons' => true,
+        'no_unused_imports'                         => true,
+        'no_superfluous_phpdoc_tags'                => true,
         'concat_space'                              => [
             'spacing' => 'one',
         ],
@@ -40,5 +45,23 @@ abstract class DefaultRules
     public static function getRules()
     {
         return self::RULES;
+    }
+
+    /**
+     * @param Finder $finder
+     * @param array $additionalRules
+     *
+     * @return Config
+     */
+    public static function create(Finder $finder, $additionalRules = [])
+    {
+        return Config::create()
+            ->setFinder($finder)
+            ->setRules(
+                array_merge(
+                    self::getRules(),
+                    $additionalRules
+                )
+            );
     }
 }

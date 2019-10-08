@@ -2,17 +2,8 @@
 
 require 'vendor/autoload.php';
 
-return \PhpCsFixer\Config::create()
-    ->setFinder(
-        (\PhpCsFixer\Finder::create()
-            ->in(__DIR__))
-    )
-    ->registerCustomFixers(new \K10rFixer\CustomFixer())
-    ->setRules(
-        array_merge(
-            \K10rFixer\Rules\PHP72::getRules(),
-            [
-                'no_superfluous_phpdoc_tags' => true,
-            ]
-        )
-    );
+return \K10rFixer\Rules\PHP72::create(
+    (\PhpCsFixer\Finder::create()
+        ->in(__DIR__))
+)
+    ->registerCustomFixers(new \K10rFixer\CustomFixer());

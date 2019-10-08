@@ -15,12 +15,13 @@
       "email": "anfragen@kellerkinder.de"
     }
   ],
-  "require": {
-    "friendsofphp/php-cs-fixer": "2.15.*"
-  },
   "autoload": {
     "psr-4": {
       "K10rFixer\\": "src/"
     }
-  }
+  },
+  "bin": [
+    "php-cs-fixer.phar",
+    "php-cs-fixer"
+  ]
 }

@@ -9,16 +9,6 @@ final class PHP73 extends DefaultRules
      */
     public static function getRules()
     {
-        return array_merge(
-            self::RULES,
-            [
-                'ternary_to_null_coalescing' => true,
-                'visibility_required'        => [
-                    'const',
-                    'property',
-                    'method',
-                ],
-            ]
-        );
+        return PHP72::getRules();
     }
 }
