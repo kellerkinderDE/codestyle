@@ -48,15 +48,16 @@ abstract class DefaultRules
     }
 
     /**
-     * @param Finder $finder
      * @param array $additionalRules
+     * @param bool  $usingCache
      *
      * @return Config
      */
-    public static function create(Finder $finder, $additionalRules = [])
+    public static function create(Finder $finder, $additionalRules = [], $usingCache = true)
     {
         return Config::create()
             ->setFinder($finder)
+            ->setUsingCache($usingCache)
             ->setRules(
                 array_merge(
                     self::getRules(),
