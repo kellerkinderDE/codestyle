@@ -1,7 +1,8 @@
 <?php
 
-namespace K10rFixer\Rules;
+namespace K10r\Codestyle;
 
+use K10r\CustomFixer;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
@@ -31,6 +32,20 @@ abstract class DefaultRules
         'concat_space'                              => [
             'spacing' => 'one',
         ],
+        'blank_line_before_statement' => [
+            'statements' => [
+                'break',
+                'continue',
+                'do',
+                'die',
+                'exit',
+                'if',
+                'return',
+                'switch',
+                'try',
+                'yield',
+            ],
+        ],
         'array_syntax' => [
             'syntax' => 'short',
         ],
@@ -53,16 +68,21 @@ abstract class DefaultRules
      *
      * @return Config
      */
-    public static function create(Finder $finder, $additionalRules = [], $usingCache = true)
+    public static function create(Finder $finder = null, $additionalRules = [], $usingCache = true)
     {
-        return Config::create()
-            ->setFinder($finder)
-            ->setUsingCache($usingCache)
+        $newConfig = Config::create();
+
+        if ($finder) {
+            $newConfig->setFinder($finder);
+        }
+
+        return $newConfig->setUsingCache($usingCache)
             ->setRules(
                 array_merge(
                     self::getRules(),
                     $additionalRules
                 )
-            );
+            )
+            ->registerCustomFixers(CustomFixer::getCustomFixer());
     }
 }

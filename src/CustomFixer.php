@@ -1,33 +1,18 @@
 <?php
 
-namespace K10rFixer;
+namespace K10r;
 
-use Generator;
-use IteratorAggregate;
-use PhpCsFixer\Finder;
-use Symfony\Component\Finder\SplFileInfo;
+use K10r\Fixer\AutomaticCommentsFixer;
+use K10r\Fixer\MultiToSingleLineAnnotationFixer;
 
-final class CustomFixer implements IteratorAggregate
+final class CustomFixer
 {
-    /**
-     * @return Generator
-     */
-    public function getIterator()
+    /** @return array */
+    public static function getCustomFixer()
     {
-        $finder = Finder::create()
-            ->files()
-            ->in(__DIR__ . '/Fixer/')
-            ->notName('AbstractFixer.php')
-            ->notName('DeprecatingFixerInterface.php')
-            ->sortByName();
-        $classes = [];
-        /** @var SplFileInfo $fileInfo */
-        foreach ($finder as $fileInfo) {
-            $className = __NAMESPACE__ . '\\Fixer\\' . $fileInfo->getBasename('.php');
-            $classes[] = $className;
-            yield new $className();
-        }
-
-        return $classes;
+        return [
+            new AutomaticCommentsFixer(),
+            new MultiToSingleLineAnnotationFixer(),
+        ];
     }
 }

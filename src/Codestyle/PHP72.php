@@ -1,6 +1,6 @@
 <?php
 
-namespace K10rFixer\Rules;
+namespace K10r\Codestyle;
 
 final class PHP72 extends DefaultRules
 {

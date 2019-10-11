@@ -1,14 +1,14 @@
 <?php
 
-namespace K10rFixer\Rules;
+namespace K10r\Codestyle;
 
-final class PHP56 extends DefaultRules
+final class PHP73 extends DefaultRules
 {
     /**
      * @return array
      */
     public static function getRules()
     {
-        return self::RULES;
+        return PHP72::getRules();
     }
 }
