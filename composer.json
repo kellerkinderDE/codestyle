@@ -11,13 +11,13 @@
   ],
   "authors": [
     {
-      "name": "Kellerkinder / k10r GmbH",
+      "name": "Kellerkinder GmbH",
       "email": "anfragen@kellerkinder.de"
     }
   ],
   "autoload": {
     "psr-4": {
-      "K10r\\": "src/"
+      "K10r\\Codestyle\\": "src/"
     }
   },
   "bin": [

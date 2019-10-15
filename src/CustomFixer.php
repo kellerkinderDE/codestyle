@@ -1,9 +1,9 @@
 <?php
 
-namespace K10r;
+namespace K10r\Codestyle;
 
-use K10r\Fixer\AutomaticCommentsFixer;
-use K10r\Fixer\MultiToSingleLineAnnotationFixer;
+use K10r\Codestyle\Fixer\AutomaticCommentsFixer;
+use K10r\Codestyle\Fixer\MultiToSingleLineAnnotationFixer;
 
 final class CustomFixer
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace K10r\Fixer;
+namespace K10r\Codestyle\Fixer;
 
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;

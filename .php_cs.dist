@@ -3,6 +3,6 @@
 require 'vendor/autoload.php';
 
 return \K10r\Codestyle\PHP72::create(
-    (\PhpCsFixer\Finder::create()
-        ->in(__DIR__))
+    \PhpCsFixer\Finder::create()
+        ->in(__DIR__)
 );

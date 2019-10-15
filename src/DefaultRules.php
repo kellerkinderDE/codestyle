@@ -2,7 +2,6 @@
 
 namespace K10r\Codestyle;
 
-use K10r\CustomFixer;
 use PhpCsFixer\Config;
 use PhpCsFixer\Finder;
 
