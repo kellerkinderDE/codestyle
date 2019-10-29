@@ -18,4 +18,4 @@ After that, decide which configuration you want to use, currently the following 
 - Change the version to one of the listed above
 - Finally, add `.php_cs.cache`  to project specific `.gitignore` file
 - If you want to apply the changes simply use: `vendor/bin/php-cs-fixer.phar fix`
-- If you want to take a look at the changes before applying use: php-cs-fixer with the following command: `vendor/bin/php-cs-fixer.phar fix --dry-run`
+- Use the following command to take a look at the changes before applying them: `vendor/bin/php-cs-fixer.phar fix --dry-run`
