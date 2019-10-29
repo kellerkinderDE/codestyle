@@ -1,15 +1,21 @@
 # Usage
 
-First require the package via composer
+## Installation
+First require the package via composer:
 
 `composer require --dev k10r/codestyle`
 
-After that, decide which configuration you want to use, currenty the following configurations are supported:
+## Choose a version
+After that, decide which configuration you want to use, currently the following configurations are supported:
 - PHP 5.6
 - PHP 7.0
 - PHP 7.1
 - PHP 7.2
+- PHP 7.3
 
-Add a `.php_cs.dist` to the root folder of your project with the required chosen configuration applied. A good example can be found in this project root folder.
-
-Finally add `.php_cs.cache`  to project specific .gitignore file  and run php-cs-fixer with the following command: `vendor/bin/php-cs-fixer.phar fix -vvv`
+## Implementation
+- Create a `.php_cs.dist` or add the one provided by the project to the root folder of your project.
+- Change the version to one of the listed above
+- Finally, add `.php_cs.cache`  to project specific `.gitignore` file
+- If you want to apply the changes simply use: `vendor/bin/php-cs-fixer.phar fix`
+- Use the following command to take a look at the changes before applying them: `vendor/bin/php-cs-fixer.phar fix --dry-run`

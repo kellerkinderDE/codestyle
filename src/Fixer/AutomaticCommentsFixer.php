@@ -1,6 +1,6 @@
 <?php
 
-namespace K10r\Codestyle\Fixers\Comment;
+namespace K10r\Codestyle\Fixer;
 
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;
@@ -8,17 +8,17 @@ use PhpCsFixer\FixerDefinition\FixerDefinition;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
-final class MultiToSingleLineAnnotationFixer extends AbstractFixer
+final class AutomaticCommentsFixer extends AbstractFixer
 {
     public function getName()
     {
-        return 'Kellerkinder/single_line_annotation';
+        return 'Kellerkinder/automatic_comments';
     }
 
     public function getDefinition()
     {
         return new FixerDefinition(
-            'Multiline @var annotations with only one property are collapsed to single line annotations',
+            'Removes the automatic "ClassName constructor." and "Class ClassName" comments.',
             [
                 new CodeSample(
                     <<<'EOT'
@@ -26,17 +26,18 @@ final class MultiToSingleLineAnnotationFixer extends AbstractFixer
 
 namespace Project\TheNamespace;
 
+/**
+ * Class TheClass
+ */
 class TheClass
 {
     /**
-     * @var int
+     * TheClass constructor.
      */
-    public $property;
-
-    /**
-     * @var string
-     */
-    public $otherProperty;
+    public function __construct()
+    {
+    
+    }
 }
 EOT
                 ),
@@ -69,21 +70,36 @@ EOT
                 continue;
             }
 
-            $this->collapseComment('var', $token);
+            $token->setContent(
+                preg_replace(
+                    '/\*\ (.*)\*.*constructor\./',
+                    '',
+                    $token->getContent()
+                )
+            );
+
+            $token->setContent(
+                preg_replace(
+                    '/\*\ Class\ (.*)/',
+                    '',
+                    $token->getContent()
+                )
+            );
+
+            $token->setContent(
+                preg_replace(
+                    '/\*\ Interface\ (.*)/',
+                    '',
+                    $token->getContent()
+                )
+            );
         }
     }
 
     private function isPossibleComment(Token $token)
     {
-        return stripos($token->getContent(), '@var') !== false;
-    }
-
-    private function collapseComment($type, Token $token)
-    {
-        $token->setContent(preg_replace(
-            '/\/(.*)\*\*\n(.*)\* @' . $type . ' (.+)\n(.*)\*\//',
-            '/** @' . $type . ' $3 */',
-            $token->getContent()
-        ));
+        return stripos($token->getContent(), 'constructor.') !== false ||
+            stripos($token->getContent(), ' Interface ') !== false ||
+            stripos($token->getContent(), ' Class ') !== false;
     }
 }

@@ -1,21 +1,27 @@
 {
-    "name": "k10r/codestyle",
-    "description": "Kellerkinder codestyle definitions for different PHP versions.",
-    "type": "library",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Kellerkinder / k10r GmbH",
-            "email": "anfragen@kellerkinder.de"
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "K10r\\Codestyle\\": "src"
-        }
-    },
-    "bin": [
-        "php-cs-fixer.phar",
-        "php-cs-fixer"
-    ]
+  "name": "k10r/codestyle",
+  "description": "Kellerkinder codestyle definitions for different PHP versions.",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [
+    "fixer",
+    "php-cs-fixer",
+    "custom-fixer",
+    "k10r"
+  ],
+  "authors": [
+    {
+      "name": "Kellerkinder GmbH",
+      "email": "anfragen@kellerkinder.de"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "K10r\\Codestyle\\": "src/"
+    }
+  },
+  "bin": [
+    "php-cs-fixer.phar",
+    "php-cs-fixer"
+  ]
 }
