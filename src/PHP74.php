@@ -9,6 +9,6 @@ final class PHP74 extends DefaultRules
      */
     public static function getRules()
     {
-        return PHP72::getRules();
+        return PHP73::getRules();
     }
 }
