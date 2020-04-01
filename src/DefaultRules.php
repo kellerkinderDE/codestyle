@@ -56,6 +56,9 @@ abstract class DefaultRules
         ],
     ];
 
+	/**
+	 * @return array
+	 */
     public static function getRules()
     {
         return self::RULES;

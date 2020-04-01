@@ -4,9 +4,9 @@ namespace K10r\Codestyle;
 
 final class PHP71 extends DefaultRules
 {
-    /**
-     * @return array
-     */
+	/**
+	 * {@inheritDoc}
+	 */
     public static function getRules()
     {
         return array_merge(

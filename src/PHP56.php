@@ -5,7 +5,7 @@ namespace K10r\Codestyle;
 final class PHP56 extends DefaultRules
 {
     /**
-     * @return array
+     * {@inheritDoc}
      */
     public static function getRules()
     {
