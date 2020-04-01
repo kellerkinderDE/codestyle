@@ -56,6 +56,9 @@ abstract class DefaultRules
         ],
     ];
 
+	/**
+	 * @return array
+	 */
     public static function getRules()
     {
         return self::RULES;
@@ -78,10 +81,11 @@ abstract class DefaultRules
         return $newConfig->setUsingCache($usingCache)
             ->setRules(
                 array_merge(
-                    self::getRules(),
+                    static::getRules(),
                     $additionalRules
                 )
             )
+            ->setRiskyAllowed(true)
             ->registerCustomFixers(CustomFixer::getCustomFixer());
     }
 }

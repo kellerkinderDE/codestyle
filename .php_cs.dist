@@ -2,7 +2,8 @@
 
 require 'vendor/autoload.php';
 
-return \K10r\Codestyle\PHP72::create(
-    \PhpCsFixer\Finder::create()
-        ->in(__DIR__)
-);
+$finder = PhpCsFixer\Finder::create()
+    ->in(__DIR__);
+
+return K10r\Codestyle\PHP56::create()
+    ->setFinder($finder);
