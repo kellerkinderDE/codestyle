@@ -21,7 +21,20 @@ abstract class DefaultRules
         'phpdoc_summary'                            => false,
         'phpdoc_types_order'                        => true,
         'return_assignment'                         => true,
-        'phpdoc_align'                              => true,
+		'phpdoc_align' => [
+			'align' => 'vertical',
+			'tags' => [
+				'param',
+				'property',
+				'property-read',
+				'property-write',
+				'return',
+				'throws',
+				'type',
+				'var',
+				'method'
+			],
+		],
         'phpdoc_to_comment'                         => false,
         'yoda_style'                                => false,
         'phpdoc_var_without_name'                   => false,
