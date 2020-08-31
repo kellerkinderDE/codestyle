@@ -8,33 +8,33 @@ use PhpCsFixer\Finder;
 abstract class DefaultRules
 {
     const RULES = [
-        '@PSR2'                                     => true,
-        '@Symfony'                                  => true,
-        '@DoctrineAnnotation'                       => true,
-        'no_useless_else'                           => true,
-        'no_useless_return'                         => true,
-        'ordered_class_elements'                    => true,
-        'ordered_imports'                           => true,
-        'phpdoc_order'                              => true,
-        'Kellerkinder/single_line_annotation'       => true,
-        'Kellerkinder/automatic_comments'           => true,
-        'phpdoc_summary'                            => false,
-        'phpdoc_types_order'                        => true,
-        'return_assignment'                         => true,
-		'phpdoc_align' => [
-			'align' => 'vertical',
-			'tags' => [
-				'param',
-				'property',
-				'property-read',
-				'property-write',
-				'return',
-				'throws',
-				'type',
-				'var',
-				'method'
-			],
-		],
+        '@PSR2'                               => true,
+        '@Symfony'                            => true,
+        '@DoctrineAnnotation'                 => true,
+        'no_useless_else'                     => true,
+        'no_useless_return'                   => true,
+        'ordered_class_elements'              => true,
+        'ordered_imports'                     => true,
+        'phpdoc_order'                        => true,
+        'Kellerkinder/single_line_annotation' => true,
+        'Kellerkinder/automatic_comments'     => true,
+        'phpdoc_summary'                      => false,
+        'phpdoc_types_order'                  => true,
+        'return_assignment'                   => true,
+        'phpdoc_align'                        => [
+            'align' => 'vertical',
+            'tags'  => [
+                'param',
+                'property',
+                'property-read',
+                'property-write',
+                'return',
+                'throws',
+                'type',
+                'var',
+                'method',
+            ],
+        ],
         'phpdoc_to_comment'                         => false,
         'yoda_style'                                => false,
         'phpdoc_var_without_name'                   => false,
@@ -69,9 +69,9 @@ abstract class DefaultRules
         ],
     ];
 
-	/**
-	 * @return array
-	 */
+    /**
+     * @return array
+     */
     public static function getRules()
     {
         return self::RULES;
