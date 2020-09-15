@@ -8,8 +8,8 @@ use K10r\Codestyle\Fixer\MultiToSingleLineAnnotationFixer;
 final class CustomFixer
 {
     /**
-	 * @return array
-	 */
+     * @return array
+     */
     public static function getCustomFixer()
     {
         return [
