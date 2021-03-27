@@ -12,10 +12,11 @@ After that, decide which configuration you want to use, currently the following 
 - PHP 7.1
 - PHP 7.2
 - PHP 7.3
+- PHP 7.4
 
 ## Implementation
 - Create a `.php_cs.dist` or add the one provided by the project to the root folder of your project.
 - Change the version to one of the listed above
 - Finally, add `.php_cs.cache`  to project specific `.gitignore` file
-- If you want to apply the changes simply use: `vendor/bin/php-cs-fixer.phar fix`
-- Use the following command to take a look at the changes before applying them: `vendor/bin/php-cs-fixer.phar fix --dry-run`
+- If you want to apply the changes simply use: `./vendor/bin/php-cs-fixer fix`
+- Use the following command to take a look at the changes before applying them: `./vendor/bin/php-cs-fixer fix --dry-run`
