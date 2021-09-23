@@ -5,17 +5,18 @@ namespace K10r\Codestyle\Fixer;
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
+use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
 final class AutomaticCommentsFixer extends AbstractFixer
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Kellerkinder/automatic_comments';
     }
 
-    public function getDefinition()
+    public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
             'Removes the automatic "ClassName constructor." and "Class ClassName" comments.',
@@ -45,17 +46,17 @@ EOT
         );
     }
 
-    public function isCandidate(Tokens $tokens)
+    public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isAnyTokenKindsFound([T_COMMENT, T_DOC_COMMENT]);
     }
 
-    public function getPriority()
+    public function getPriority(): int
     {
         return 9000;
     }
 
-    protected function applyFix(\SplFileInfo $file, Tokens $tokens)
+    protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
     {
         /**
          * @var int   $index
@@ -96,7 +97,7 @@ EOT
         }
     }
 
-    private function isPossibleComment(Token $token)
+    private function isPossibleComment(Token $token): bool
     {
         return stripos($token->getContent(), 'constructor.') !== false ||
             stripos($token->getContent(), ' Interface ') !== false ||
