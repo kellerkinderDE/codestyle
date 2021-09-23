@@ -85,7 +85,7 @@ abstract class DefaultRules
      */
     public static function create(Finder $finder = null, $additionalRules = [], $usingCache = true)
     {
-        $newConfig = Config::create();
+        $newConfig = new Config;
 
         if ($finder) {
             $newConfig->setFinder($finder);
