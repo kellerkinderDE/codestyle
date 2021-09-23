@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace K10r\Codestyle\Fixer;
 
 use PhpCsFixer\AbstractFixer;

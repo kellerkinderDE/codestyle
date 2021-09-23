@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace K10r\Codestyle;
 
 use K10r\Codestyle\Fixer\AutomaticCommentsFixer;
@@ -7,10 +9,7 @@ use K10r\Codestyle\Fixer\MultiToSingleLineAnnotationFixer;
 
 final class CustomFixer
 {
-    /**
-     * @return array
-     */
-    public static function getCustomFixer()
+    public static function getCustomFixer(): array
     {
         return [
             new AutomaticCommentsFixer(),

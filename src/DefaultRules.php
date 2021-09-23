@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace K10r\Codestyle;
 
 use PhpCsFixer\Config;
@@ -7,21 +9,21 @@ use PhpCsFixer\Finder;
 
 abstract class DefaultRules
 {
-    const RULES = [
-        '@PSR2'                                  => true,
-        '@Symfony'                               => true,
-        '@DoctrineAnnotation'                    => true,
-        'no_useless_else'                        => true,
-        'no_useless_return'                      => true,
-        'ordered_class_elements'                 => true,
-        'ordered_imports'                        => true,
-        'phpdoc_order'                           => true,
-        'Kellerkinder/single_line_annotation'    => true,
-        'Kellerkinder/automatic_comments'        => true,
-        'phpdoc_summary'                         => false,
-        'phpdoc_types_order'                     => true,
-        'return_assignment'                      => true,
-        'phpdoc_align'                           => [
+    public const RULES = [
+        '@PSR2'                               => true,
+        '@Symfony'                            => true,
+        '@DoctrineAnnotation'                 => true,
+        'no_useless_else'                     => true,
+        'no_useless_return'                   => true,
+        'ordered_class_elements'              => true,
+        'ordered_imports'                     => true,
+        'phpdoc_order'                        => true,
+        'Kellerkinder/single_line_annotation' => true,
+        'Kellerkinder/automatic_comments'     => true,
+        'phpdoc_summary'                      => false,
+        'phpdoc_types_order'                  => true,
+        'return_assignment'                   => true,
+        'phpdoc_align'                        => [
             'align' => 'vertical',
             'tags'  => [
                 'param',
@@ -44,7 +46,7 @@ abstract class DefaultRules
         'concat_space'                           => [
             'spacing' => 'one',
         ],
-        'blank_line_before_statement'            => [
+        'blank_line_before_statement' => [
             'statements' => [
                 'break',
                 'continue',
@@ -57,20 +59,20 @@ abstract class DefaultRules
                 'yield',
             ],
         ],
-        'array_syntax'                           => [
+        'array_syntax' => [
             'syntax' => 'short',
         ],
-        'binary_operator_spaces'                 => [
+        'binary_operator_spaces' => [
             'operators' => [
                 '=>' => 'align_single_space_minimal',
                 '='  => 'align_single_space_minimal',
             ],
         ],
-        'phpdoc_to_return_type'                  => true,
-        'declare_strict_types'                   => true,
-        'ternary_to_null_coalescing'             => true,
-        'void_return'                            => true,
-        'visibility_required'                    => [
+        'phpdoc_to_return_type'      => true,
+        'declare_strict_types'       => true,
+        'ternary_to_null_coalescing' => true,
+        'void_return'                => true,
+        'visibility_required'        => [
             'elements' => [
                 'const',
                 'property',
@@ -79,23 +81,18 @@ abstract class DefaultRules
         ],
     ];
 
-    /**
-     * @return array
-     */
-    public static function getRules()
+    public static function getRules(): array
     {
         return self::RULES;
     }
 
     /**
      * @param array $additionalRules
-     * @param bool $usingCache
-     *
-     * @return Config
+     * @param bool  $usingCache
      */
-    public static function create(Finder $finder = null, $additionalRules = [], $usingCache = true)
+    public static function create(Finder $finder = null, $additionalRules = [], $usingCache = true): Config
     {
-        $newConfig = new Config;
+        $newConfig = new Config();
 
         if ($finder) {
             $newConfig->setFinder($finder);
