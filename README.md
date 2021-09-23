@@ -7,12 +7,11 @@ First require the package via composer:
 
 ## Choose a version
 After that, decide which configuration you want to use, currently the following configurations are supported:
-- PHP 5.6
-- PHP 7.0
 - PHP 7.1
 - PHP 7.2
 - PHP 7.3
 - PHP 7.4
+- PHP 8.0
 
 ## Implementation
 - Create a `.php_cs.dist` or add the one provided by the project to the root folder of your project.
