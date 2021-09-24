@@ -72,7 +72,7 @@ EOT
                 continue;
             }
 
-            $this->collapseComment('var', $token);
+            $tokens[$index] = new Token($this->collapseComment('var', $token));
         }
     }
 
@@ -81,12 +81,12 @@ EOT
         return stripos($token->getContent(), '@var') !== false;
     }
 
-    private function collapseComment($type, Token $token): void
+    private function collapseComment(string $type, Token $token): ?string
     {
-        $token->setContent(preg_replace(
+        return preg_replace(
             '/\/(.*)\*\*\n(.*)\* @' . $type . ' (.+)\n(.*)\*\//',
             '/** @' . $type . ' $3 */',
             $token->getContent()
-        ));
+        );
     }
 }

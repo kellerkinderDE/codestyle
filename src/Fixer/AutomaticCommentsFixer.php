@@ -39,7 +39,7 @@ class TheClass
      */
     public function __construct()
     {
-    
+
     }
 }
 EOT
@@ -73,29 +73,27 @@ EOT
                 continue;
             }
 
-            $token->setContent(
-                preg_replace(
-                    '/\*\ (.*)\*.*constructor\./',
-                    '',
-                    $token->getContent()
-                )
+            $content = $token->getContent();
+
+            $content = preg_replace(
+                '/\*\ (.*)\*.*constructor\./',
+                '',
+                $content
             );
 
-            $token->setContent(
-                preg_replace(
-                    '/\*\ Class\ (.*)/',
-                    '',
-                    $token->getContent()
-                )
+            $content = preg_replace(
+                '/\*\ Class\ (.*)/',
+                '',
+                $content
             );
 
-            $token->setContent(
-                preg_replace(
-                    '/\*\ Interface\ (.*)/',
-                    '',
-                    $token->getContent()
-                )
+            $content = preg_replace(
+                '/\*\ Interface\ (.*)/',
+                '',
+                $content
             );
+
+            $tokens[$index] = new Token($content);
         }
     }
 
