@@ -1,21 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace K10r\Codestyle\Fixer;
 
 use PhpCsFixer\AbstractFixer;
 use PhpCsFixer\FixerDefinition\CodeSample;
 use PhpCsFixer\FixerDefinition\FixerDefinition;
+use PhpCsFixer\FixerDefinition\FixerDefinitionInterface;
 use PhpCsFixer\Tokenizer\Token;
 use PhpCsFixer\Tokenizer\Tokens;
 
 final class MultiToSingleLineAnnotationFixer extends AbstractFixer
 {
-    public function getName()
+    public function getName(): string
     {
         return 'Kellerkinder/single_line_annotation';
     }
 
-    public function getDefinition()
+    public function getDefinition(): FixerDefinitionInterface
     {
         return new FixerDefinition(
             'Multiline @var annotations with only one property are collapsed to single line annotations',
@@ -44,17 +47,17 @@ EOT
         );
     }
 
-    public function isCandidate(Tokens $tokens)
+    public function isCandidate(Tokens $tokens): bool
     {
         return $tokens->isAnyTokenKindsFound([T_COMMENT, T_DOC_COMMENT]);
     }
 
-    public function getPriority()
+    public function getPriority(): int
     {
         return 9000;
     }
 
-    protected function applyFix(\SplFileInfo $file, Tokens $tokens)
+    protected function applyFix(\SplFileInfo $file, Tokens $tokens): void
     {
         /**
          * @var int   $index
@@ -73,12 +76,12 @@ EOT
         }
     }
 
-    private function isPossibleComment(Token $token)
+    private function isPossibleComment(Token $token): bool
     {
         return stripos($token->getContent(), '@var') !== false;
     }
 
-    private function collapseComment($type, Token $token)
+    private function collapseComment($type, Token $token): void
     {
         $token->setContent(preg_replace(
             '/\/(.*)\*\*\n(.*)\* @' . $type . ' (.+)\n(.*)\*\//',

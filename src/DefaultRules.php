@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace K10r\Codestyle;
 
 use PhpCsFixer\Config;
@@ -7,7 +9,7 @@ use PhpCsFixer\Finder;
 
 abstract class DefaultRules
 {
-    const RULES = [
+    public const RULES = [
         '@PSR2'                               => true,
         '@Symfony'                            => true,
         '@DoctrineAnnotation'                 => true,
@@ -35,13 +37,13 @@ abstract class DefaultRules
                 'method',
             ],
         ],
-        'phpdoc_to_comment'                         => false,
-        'yoda_style'                                => false,
-        'phpdoc_var_without_name'                   => false,
-        'no_multiline_whitespace_before_semicolons' => true,
-        'no_unused_imports'                         => true,
-        'no_superfluous_phpdoc_tags'                => true,
-        'concat_space'                              => [
+        'phpdoc_to_comment'                      => false,
+        'yoda_style'                             => false,
+        'phpdoc_var_without_name'                => false,
+        'multiline_whitespace_before_semicolons' => true,
+        'no_unused_imports'                      => true,
+        'no_superfluous_phpdoc_tags'             => true,
+        'concat_space'                           => [
             'spacing' => 'one',
         ],
         'blank_line_before_statement' => [
@@ -49,7 +51,6 @@ abstract class DefaultRules
                 'break',
                 'continue',
                 'do',
-                'die',
                 'exit',
                 'if',
                 'return',
@@ -67,12 +68,20 @@ abstract class DefaultRules
                 '='  => 'align_single_space_minimal',
             ],
         ],
+        'phpdoc_to_return_type'      => true,
+        'declare_strict_types'       => true,
+        'ternary_to_null_coalescing' => true,
+        'void_return'                => true,
+        'visibility_required'        => [
+            'elements' => [
+                'const',
+                'property',
+                'method',
+            ],
+        ],
     ];
 
-    /**
-     * @return array
-     */
-    public static function getRules()
+    public static function getRules(): array
     {
         return self::RULES;
     }
@@ -80,12 +89,10 @@ abstract class DefaultRules
     /**
      * @param array $additionalRules
      * @param bool  $usingCache
-     *
-     * @return Config
      */
-    public static function create(Finder $finder = null, $additionalRules = [], $usingCache = true)
+    public static function create(Finder $finder = null, $additionalRules = [], $usingCache = true): Config
     {
-        $newConfig = Config::create();
+        $newConfig = new Config();
 
         if ($finder) {
             $newConfig->setFinder($finder);
