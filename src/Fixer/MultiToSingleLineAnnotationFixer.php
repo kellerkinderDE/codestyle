@@ -73,9 +73,9 @@ EOT
             }
 
             $tokens[$index] = new Token([
-            	0 => $token->getId(),
-				1 => $this->collapseComment('var', $token),
-			]);
+                0 => $token->getId(),
+                1 => $this->collapseComment('var', $token),
+            ]);
         }
     }
 
