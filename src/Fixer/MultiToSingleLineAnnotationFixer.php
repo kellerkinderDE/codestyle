@@ -72,7 +72,10 @@ EOT
                 continue;
             }
 
-            $tokens[$index] = new Token($this->collapseComment('var', $token));
+            $tokens[$index] = new Token([
+                0 => $token->getId(),
+                1 => $this->collapseComment('var', $token),
+            ]);
         }
     }
 
