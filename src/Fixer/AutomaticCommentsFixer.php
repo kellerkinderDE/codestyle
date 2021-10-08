@@ -93,7 +93,10 @@ EOT
                 $content
             );
 
-            $tokens[$index] = new Token($content);
+            $tokens[$index] = new Token([
+				0 => $token->getId(),
+				1 => $content,
+			]);
         }
     }
 
