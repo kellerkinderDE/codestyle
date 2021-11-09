@@ -79,6 +79,11 @@ abstract class DefaultRules
                 'method',
             ],
         ],
+        'yoda_style'                => [
+            'equal' => false,
+            'identical' => false,
+            'less_and_greater' => false,
+        ],
     ];
 
     public static function getRules(): array
