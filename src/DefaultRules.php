@@ -38,7 +38,6 @@ abstract class DefaultRules
             ],
         ],
         'phpdoc_to_comment'                      => false,
-        'yoda_style'                             => false,
         'phpdoc_var_without_name'                => false,
         'multiline_whitespace_before_semicolons' => true,
         'no_unused_imports'                      => true,
