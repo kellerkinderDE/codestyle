@@ -13,6 +13,7 @@ After that, decide which configuration you want to use, currently the following 
 - PHP 7.4
 - PHP 8.0
 - PHP 8.1
+- PHP 8.2 (copy of PHP 8.1)
 
 ## Implementation
 - Create a `.php-cs-fixer.dist.php` or add the one provided by the project to the root folder of your project.
