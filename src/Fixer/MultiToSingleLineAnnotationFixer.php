@@ -25,23 +25,23 @@ final class MultiToSingleLineAnnotationFixer extends AbstractFixer
             [
                 new CodeSample(
                     <<<'EOT'
-<?php
+                        <?php
 
-namespace Project\TheNamespace;
+                        namespace Project\TheNamespace;
 
-class TheClass
-{
-    /**
-     * @var int
-     */
-    public $property;
+                        class TheClass
+                        {
+                            /**
+                             * @var int
+                             */
+                            public $property;
 
-    /**
-     * @var string
-     */
-    public $otherProperty;
-}
-EOT
+                            /**
+                             * @var string
+                             */
+                            public $otherProperty;
+                        }
+                        EOT
                 ),
             ]
         );
