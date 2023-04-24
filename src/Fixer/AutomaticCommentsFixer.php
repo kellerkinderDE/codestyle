@@ -25,24 +25,24 @@ final class AutomaticCommentsFixer extends AbstractFixer
             [
                 new CodeSample(
                     <<<'EOT'
-<?php
+                        <?php
 
-namespace Project\TheNamespace;
+                        namespace Project\TheNamespace;
 
-/**
- * Class TheClass
- */
-class TheClass
-{
-    /**
-     * TheClass constructor.
-     */
-    public function __construct()
-    {
+                        /**
+                         * Class TheClass
+                         */
+                        class TheClass
+                        {
+                            /**
+                             * TheClass constructor.
+                             */
+                            public function __construct()
+                            {
 
-    }
-}
-EOT
+                            }
+                        }
+                        EOT
                 ),
             ]
         );
