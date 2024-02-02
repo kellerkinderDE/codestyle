@@ -6,12 +6,9 @@ namespace K10r\Codestyle;
 
 final class PHP82 extends DefaultRules
 {
-    /**
-     * {@inheritdoc}
-     */
     public static function getRules(): array
     {
-        return array_merge(PHP81::getRules(), [
+        return array_merge(DefaultRules::getRules(), [
             '@PHP82Migration' => true,
         ]);
     }
